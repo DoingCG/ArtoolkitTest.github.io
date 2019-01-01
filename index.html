@@ -81,7 +81,7 @@ window.onload = function() {
  
     document.addEventListener('click', onDocumentMouseDown, false);
     document.body.addEventListener('touchstart', function(e){
-        alert(e.changedTouches[0].pageX) // alert pageX coordinate of touch point
+        //alert(e.changedTouches[0].pageX) // alert pageX coordinate of touch point
 
  
 	mouse.x = (e.changedTouches[0].pageX / renderer.domElement.clientWidth) * 2 - 1;
