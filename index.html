@@ -45,8 +45,40 @@ var scene, camera, renderer, clock, deltaTime, totalTime;
 var arToolkitSource, arToolkitContext;
 var markerRoot1;
 var mesh1;
-initialize();
-animate();
+//initialize();
+//animate();
+function objectClickHandler() {
+       window.open('http://www.pericror.com/', '_blank');
+}
+window.onload = function() {
+    initialize();
+    animate();
+ 
+    var raycaster = new THREE.Raycaster();
+    var mouse = new THREE.Vector2();
+ 
+    // See https://stackoverflow.com/questions/12800150/catch-the-click-event-on-a-specific-mesh-in-the-renderer
+    // Handle all clicks to determine of a three.js object was clicked and trigger its callback
+    function onDocumentMouseDown(event) {
+        event.preventDefault();
+ 
+        mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y =  - (event.clientY / renderer.domElement.clientHeight) * 2 + 1;
+ 
+        raycaster.setFromCamera(mouse, camera);
+ 
+        meshObjects = [mesh, mesh2, mesh3]; // three.js objects with click handlers we are interested in
+         
+        var intersects = raycaster.intersectObjects(meshObjects);
+ 
+        if (intersects.length &amp;amp;gt; 0) {
+            intersects[0].object.callback();
+        }
+ 
+    }
+ 
+    document.addEventListener('mousedown', onDocumentMouseDown, false);
+};
 function initialize()
 {
 	scene = new THREE.Scene();
@@ -149,7 +181,7 @@ function initialize()
 	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh1.add(mesh2);
 	mesh2.position.z+=0.1;
-	mesh2.onclick=playVideo();
+	mesh.callback = playVideo;
 }
 function update()
 {
