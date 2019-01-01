@@ -139,8 +139,8 @@ function animate()
 	deltaTime = clock.getDelta();
 	totalTime += deltaTime;
 	
-	var position	= THREEx.ObjCoord.worldPosition(scene);
-	document.getElementByID("video").setAttribute('position',position);
+	var position	= THREEx.ObjCoord.worldPosition(markerRoot1);
+	mesh1.setAttribute('position',position);
 	
 	update();
 	render();
