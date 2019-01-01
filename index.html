@@ -123,11 +123,11 @@ function initialize()
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
-	mesh1.rotation.x = -Math.PI/2;
-	//mesh1.setAttribute("id","video");
+	//mesh1.rotation.x = -Math.PI/2;
+	mesh1.setAttribute("id","video");
 	
-	//scene.add(mesh1);
-	markerRoot1.add( mesh1 );
+	scene.add(mesh1);
+	//markerRoot1.add( mesh1 );
 }
 function update()
 {
@@ -145,8 +145,8 @@ function animate()
 	deltaTime = clock.getDelta();
 	totalTime += deltaTime;
 	
-	//var position	= THREEx.ObjCoord.worldPosition(markerRoot1);
-	//mesh1.position=position;
+	var position	= THREEx.ObjCoord.worldPosition(markerRoot1);
+	mesh1.position=position;
 	
 	update();
 	render();
