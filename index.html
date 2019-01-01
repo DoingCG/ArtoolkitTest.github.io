@@ -16,10 +16,14 @@
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
 
-<video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none">
-	<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-	<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-</video>
+<video id="video"  src="https://instagram.fmad7-1.fna.fbcdn.net/vp/8df35c8a81408c354f3f385d99bb55ea/5C2B0807/t50.2886-16/49682316_2053630514726334_789195232708132864_n.mp4?_nc_ht=instagram.fmad7-1.fna.fbcdn.net " 
+    <!-- webkit-playsinline  
+    crossOrigin="anonymous"-->
+    type="video/mp4"
+    poster="https://instagram.fmad7-1.fna.fbcdn.net/vp/dbcd3714bea09773226546e0fbc56f17/5C2ADC82/t51.2885-15/e35/46552306_378004282983459_4023662717802556687_n.jpg?_nc_ht=instagram.fmad7-1.fna.fbcdn.net"
+    <!-- autoplay="true"
+    loop="true"-->
+    controls ></video>
 		
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
@@ -101,7 +105,7 @@ function initialize()
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
 		type: 'pattern', patternUrl: "data/hiro.patt",
 	})
-	let geometry1 = new THREE.PlaneBufferGeometry(2,2, 4,4);
+	let geometry1 = new THREE.PlaneBufferGeometry(1.8,1, 7.2,4);
 	let video = document.getElementById( 'video' );
 	let texture = new THREE.VideoTexture( video );
 	texture.minFilter = THREE.LinearFilter;
