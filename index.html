@@ -80,6 +80,22 @@ window.onload = function() {
     }
  
     document.addEventListener('click', onDocumentMouseDown, false);
+    document.body.addEventListener('touchstart', function(e){
+        alert(e.changedTouches[0].pageX) // alert pageX coordinate of touch point
+
+ 
+	mouse.x = (e.changedTouches[0].pageX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y =  - (e.changedTouches[0].pageX/ renderer.domElement.clientHeight) * 2 + 1;
+	    
+	raycaster.setFromCamera(mouse, camera);
+        meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
+         
+        var intersects = raycaster.intersectObjects(meshObjects);
+ 
+        if (intersects.length> 0) {
+            intersects[0].object.callback();
+        }
+    }, false)
 };
 function initialize()
 {
