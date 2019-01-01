@@ -32,6 +32,9 @@
 	<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
 	<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 	</video>
+	<img id="play-image"transparent="true">
+	<source>src="btn-play_video.png" </source>
+	</img>
 		
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
@@ -128,7 +131,18 @@ function initialize()
 	
 	video.pause();
 	scene.add(mesh1);
+	
+	let geometry2 = new THREE.PlaneBufferGeometry(0.3,0.3, 4,4);
+	let image = document.getElementById( 'play-image' );
+	let texture2 = new THREE.VideoTexture( image );
+	texture.minFilter = THREE.LinearFilter;
+	texture.magFilter = THREE.LinearFilter;
+	texture.format = THREE.RGBFormat;
+	let material2 = new THREE.MeshBasicMaterial( { map: texture2 } );
 	//markerRoot1.add( mesh1 );
+	mesh2 = new THREE.Mesh( geometry2, material2 );
+	mesh1.add(mesh2);
+	mesh2.position.z+=0.1;
 }
 function update()
 {
