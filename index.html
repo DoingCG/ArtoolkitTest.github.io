@@ -140,7 +140,7 @@ function animate()
 	totalTime += deltaTime;
 	
 	var position	= THREEx.ObjCoord.worldPosition(markerRoot1);
-	mesh1.setAttribute('position',position);
+	mesh1.position=position;
 	
 	update();
 	render();
