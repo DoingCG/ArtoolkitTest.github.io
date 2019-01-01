@@ -139,16 +139,16 @@ function initialize()
 	texture.format = THREE.RGBFormat;
 	let material2 = new THREE.MeshBasicMaterial( { map: texture2, transparent: true } );*/
 	
-	/*var loader = new THREE.TextureLoader();
+	var loader = new THREE.TextureLoader();
 
 	// Load an image file into a custom material
-	var material2 = new THREE.SpriteMaterial({
+	var material2 = new THREE.MeshBasicMaterial({
   	map: loader.load('btn-play_video.png')
 	});
 	//markerRoot1.add( mesh1 );
 	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh1.add(mesh2);
-	mesh2.position.z+=0.1;*/
+	mesh2.position.z+=0.1;
 }
 function update()
 {
