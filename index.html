@@ -188,7 +188,7 @@ function initialize()
 	var boxGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 	box = new THREE.Mesh(boxGeometry, material2);
 	box.position.set(0, 0, 0);
-	box.callback = objectClickHandler;
+	box.callback = playVideo;
 	
 	mesh1.add(box);
 }
@@ -221,7 +221,7 @@ function animate()
 	
 function playVideo()
 	{
-	objectClickHandler();
+	//objectClickHandler();
 	video.play();	
 	}
 </script>
