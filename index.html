@@ -63,7 +63,7 @@ window.onload = function() {
     // Handle all clicks to determine of a three.js object was clicked and trigger its callback
     function onDocumentMouseDown(event) {
         event.preventDefault();
- 
+ 	alert(event.clientX,clientY);
         mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (event.clientY / renderer.domElement.clientHeight) * 2 + 1;
         
@@ -76,7 +76,7 @@ window.onload = function() {
         if (intersects.length> 0) {
             intersects[0].object.callback();
         }
- 	alert(mouse.x + "," + mouse.y);
+ 	//alert(mouse.x + "," + mouse.y);
     }
  
     document.addEventListener('click', onDocumentMouseDown, false);
