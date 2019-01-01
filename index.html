@@ -32,7 +32,8 @@
 	<source src="video/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
 	<source src="video/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 	</video>
-	<img id="play-image"transparent="true" material="alphaTest: 0.5">src="btn-play_video.png">
+	<!--<img id="play-image"transparent="true" material="alphaTest: 0.5" src="btn-play_video.png">-->
+	
 		
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
@@ -131,12 +132,19 @@ function initialize()
 	scene.add(mesh1);
 	
 	let geometry2 = new THREE.PlaneBufferGeometry(0.3,0.3, 4,4);
-	let image = document.getElementById( 'play-image' );
+	/*let image = document.getElementById( 'play-image' );
 	let texture2 = new THREE.VideoTexture( image );
 	texture.minFilter = THREE.LinearFilter;
 	texture.magFilter = THREE.LinearFilter;
 	texture.format = THREE.RGBFormat;
-	let material2 = new THREE.MeshBasicMaterial( { map: texture2, transparent: true } );
+	let material2 = new THREE.MeshBasicMaterial( { map: texture2, transparent: true } );*/
+	
+	var loader = new THREE.TextureLoader();
+
+	// Load an image file into a custom material
+	var material2 = new THREE.SpriteMaterial({
+  	map: loader.load('btn-play_video.png')
+	});
 	//markerRoot1.add( mesh1 );
 	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh1.add(mesh2);
