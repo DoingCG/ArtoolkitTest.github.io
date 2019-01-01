@@ -81,11 +81,11 @@ window.onload = function() {
  
     document.addEventListener('click', onDocumentMouseDown, false);
     document.body.addEventListener('touchstart', function(e){
-        alert(e.changedTouches[0].screenX,e.changedTouches[0].screenY); // alert pageX coordinate of touch point
+        alert(e.changedTouches[0].clientX,e.changedTouches[0].clientY); // alert pageX coordinate of touch point
 	event.preventDefault();
  
-	mouse.x = (e.changedTouches[0].pageX / renderer.domElement.clientWidth) * 2 - 1;
-        mouse.y =  - (e.changedTouches[0].pageX/ renderer.domElement.clientHeight) * 2 + 1;
+	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y =  - (e.changedTouches[0].clientX/ renderer.domElement.clientHeight) * 2 + 1;
 	    
 	raycaster.setFromCamera(mouse, camera);
         meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
