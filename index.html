@@ -12,6 +12,7 @@
 	<script src="threex/threex-artoolkitcontext.js"></script>
 	<script src="threex/threex-arbasecontrols.js"></script>
 	<script src="threex/threex-armarkercontrols.js"></script>
+	<script src='threex.objcoord-master/threex.objcoord.js'></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -23,7 +24,9 @@
     poster="https://instagram.fmad7-1.fna.fbcdn.net/vp/dbcd3714bea09773226546e0fbc56f17/5C2ADC82/t51.2885-15/e35/46552306_378004282983459_4023662717802556687_n.jpg?_nc_ht=instagram.fmad7-1.fna.fbcdn.net"
     <!-- autoplay="true"
     loop="true"-->
-    controls ></video>
+    controls 
+    style="display:none>
+ </video>
 		
 <!-- 
   Example created by Lee Stemkoski: https://github.com/stemkoski
@@ -115,8 +118,10 @@ function initialize()
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
 	mesh1.rotation.x = -Math.PI/2;
+	mesh1.setAttribute("id","video");
 	
-	markerRoot1.add( mesh1 );
+	scene.add(mesh1);
+	//markerRoot1.add( mesh1 );
 }
 function update()
 {
@@ -133,6 +138,10 @@ function animate()
 	requestAnimationFrame(animate);
 	deltaTime = clock.getDelta();
 	totalTime += deltaTime;
+	
+	var position	= THREEx.ObjCoord.worldPosition(scene);
+	document.getElementByID("video").setAttribute('position',position);
+	
 	update();
 	render();
 }
