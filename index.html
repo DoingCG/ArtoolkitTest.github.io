@@ -86,17 +86,24 @@ window.onload = function() {
 	    var orientation = screen.msOrientation || (screen.orientation || screen.mozOrientation || {}).type;
 
 	if (orientation === "landscape-primary") {
-	  alert("That looks good.");
-	} else if (orientation === "landscape-secondary") {
-	  alert("Mmmh... the screen is upside down!");
-	} else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
-	  alert("Mmmh... you should rotate your device to landscape");
-	} else if (orientation === undefined) {
-	  alert("The orientation API isn't supported in this browser :("); 
-	}
- 
+	  //alert("That looks good.");
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
+	} else if (orientation === "landscape-secondary") {
+	  //alert("Mmmh... the screen is upside down!");
+	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
+	} else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
+	  //alert("Mmmh... you should rotate your device to landscape");
+	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientHeight) * 2 - 1;
+        mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 + 1;
+	} else if (orientation === undefined) {
+	  //alert("The orientation API isn't supported in this browser :("); 
+	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
+	}
+ 
+	
 	alert(mouse.x); // alert pageX coordinate of touch point  
 	raycaster.setFromCamera(mouse, camera);
 
