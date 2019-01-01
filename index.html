@@ -149,6 +149,7 @@ function initialize()
 	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh1.add(mesh2);
 	mesh2.position.z+=0.1;
+	mesh2.onclick=playVideo();
 }
 function update()
 {
@@ -176,6 +177,11 @@ function animate()
 	update();
 	render();
 }
+	
+function playVideo()
+	{
+	video.play();	
+	}
 </script>
 
 </body>
