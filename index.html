@@ -95,8 +95,8 @@ window.onload = function() {
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 	} else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
 	  //alert("Mmmh... you should rotate your device to landscape");
-	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientHeight) * 2 - 1;
-        mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 + 1;
+	mouse.x = - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
+        mouse.y = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
 	} else if (orientation === undefined) {
 	  //alert("The orientation API isn't supported in this browser :("); 
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
