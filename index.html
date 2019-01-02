@@ -69,7 +69,7 @@ window.onload = function() {
         alert(mouse.x); 
         raycaster.setFromCamera(mouse, camera);
  
-        meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
+        meshObjects = [mesh2]; // three.js objects with click handlers we are interested in
          
         var intersects = raycaster.intersectObjects(meshObjects);
  
