@@ -104,15 +104,15 @@ window.onload = function() {
 		
 	  alert("The orientation API isn't supported in this browser :("); 
 		//alert(renderer.domElement.clientHeight);
-		if(renderer.domElement.clientHeight>renderer.domElement.clientWidth)
+		if(renderer.domElement.clientHeight<renderer.domElement.clientWidth)
 		{
-			alert("portrait");
+			//alert("portrait");
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientHeight) * 2 - 1;
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 + 1;
 		}
 		else
 		{
-			alert("landscape");
+			//alert("landscape");
 		mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
         	mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 		}
