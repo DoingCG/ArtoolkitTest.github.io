@@ -66,10 +66,10 @@ window.onload = function() {
  	//alert(event.clientX,clientY);
         mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-        alert(mouse.x); 
+        alert(mouse.y); 
         raycaster.setFromCamera(mouse, camera);
  
-        meshObjects = [mesh2]; // three.js objects with click handlers we are interested in
+        meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
          
         var intersects = raycaster.intersectObjects(meshObjects);
  
@@ -104,10 +104,10 @@ window.onload = function() {
 	}
  
 	
-	alert(mouse.x); // alert pageX coordinate of touch point  
+	alert(mouse.y); // alert pageX coordinate of touch point  
 	raycaster.setFromCamera(mouse, camera);
 
-        meshObjects = [mesh2]; // three.js objects with click handlers we are interested in
+        meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
          
         var intersects = raycaster.intersectObjects(meshObjects);
  
@@ -222,12 +222,12 @@ function initialize()
 	mesh2.position.z+=0.1;
 	mesh2.callback = playVideo;
 	
-	/*var boxGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+	var boxGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 	box = new THREE.Mesh(boxGeometry, material2);
 	box.position.set(0, 0, 0);
 	box.callback = playVideo;
 	
-	mesh1.add(box);*/
+	mesh1.add(box);
 }
 function update()
 {
@@ -261,6 +261,8 @@ function playVideo()
 	//objectClickHandler();
 	mesh2.material.transparent = true ;
 	mesh2.material.opacity=0;
+	box.material.transparent = true ;
+	box.material.opacity=0;
 	video.play();	
 	}
 </script>
