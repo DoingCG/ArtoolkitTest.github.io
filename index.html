@@ -87,23 +87,23 @@ window.onload = function() {
 
 	if (orientation === "landscape-primary") {
 	  //alert("That looks good.");
-		alert(renderer.domElement.clientWidth);
+		alert(renderer.domElement.clientHeight);
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 	} else if (orientation === "landscape-secondary") {
 	  //alert("Mmmh... the screen is upside down!");
-		alert(renderer.domElement.clientWidth);
+		alert(renderer.domElement.clientHeight);
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 	} else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
-	  //alert("Mmmh... you should rotate your device to landscape");
-		alert(renderer.domElement.clientWidth);
-	mouse.x = (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 - 1;
+	  alert("Mmmh... you should rotate your device to landscape");
+		alert(renderer.domElement.clientHeight);
+	mouse.x = (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 - 1;
         mouse.y = (e.changedTouches[0].clientX / renderer.domElement.clientHeight) * 2 - 1;
 	} else if (orientation === undefined) {
 		
 	  //alert("The orientation API isn't supported in this browser :("); 
-		alert(renderer.domElement.clientWidth);
+		alert(renderer.domElement.clientHeight);
 	mouse.x = (e.changedTouches[0].clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 	}
