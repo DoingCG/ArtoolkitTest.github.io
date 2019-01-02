@@ -66,7 +66,7 @@ window.onload = function() {
  	//alert(event.clientX,clientY);
         mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-        alert(mouse.y); 
+        alert(mouse.x); 
         raycaster.setFromCamera(mouse, camera);
  
         meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
@@ -104,7 +104,7 @@ window.onload = function() {
 	}
  
 	
-	alert(mouse.y); // alert pageX coordinate of touch point  
+	alert(mouse.x); // alert pageX coordinate of touch point  
 	raycaster.setFromCamera(mouse, camera);
 
         meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
