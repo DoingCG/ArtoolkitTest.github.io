@@ -66,7 +66,7 @@ window.onload = function() {
  	//alert(event.clientX,clientY);
         mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
         mouse.y =  - (event.clientY / renderer.domElement.clientHeight) * 2 + 1;
-        alert(mouse.x); 
+        //alert(mouse.x); 
         raycaster.setFromCamera(mouse, camera);
  
         meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
@@ -95,7 +95,7 @@ window.onload = function() {
         mouse.y =  - (e.changedTouches[0].clientY/ renderer.domElement.clientHeight) * 2 + 1;
 	} else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
 	  //alert("Mmmh... you should rotate your device to landscape");
-	mouse.x = - (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 + 1;
+	mouse.x = (e.changedTouches[0].clientY/ renderer.domElement.clientWidth) * 2 - 1;
         mouse.y = (e.changedTouches[0].clientX / renderer.domElement.clientHeight) * 2 - 1;
 	} else if (orientation === undefined) {
 	  //alert("The orientation API isn't supported in this browser :("); 
@@ -104,7 +104,7 @@ window.onload = function() {
 	}
  
 	
-	alert(mouse.x); // alert pageX coordinate of touch point  
+	alert(mouse.x,mouse.y); // alert pageX coordinate of touch point  
 	raycaster.setFromCamera(mouse, camera);
 
         meshObjects = [mesh2,box]; // three.js objects with click handlers we are interested in
