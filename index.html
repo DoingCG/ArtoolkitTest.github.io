@@ -79,7 +79,7 @@ window.onload = function() {
  	//alert(mouse.x + "," + mouse.y);
     }
  
-    /*document.addEventListener('click', onDocumentMouseDown, false);
+    document.addEventListener('click', onDocumentMouseDown, false);
     document.body.addEventListener('touchstart', function(e){
 	event.preventDefault();
 	
@@ -132,7 +132,7 @@ window.onload = function() {
     }, false)
 
 	//alert(mouse.x + "," + mouse.y);
-};*/
+}
 function initialize()
 {
 	scene = new THREE.Scene();
@@ -232,7 +232,7 @@ function initialize()
   	map: loader.load('btn-play_video.png')
 	});
 	//markerRoot1.add( mesh1 );
-	/*mesh2 = new THREE.Mesh( geometry2, material2 );
+	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh1.add(mesh2);
 	mesh2.position.z+=0.1;
 	mesh2.callback = playVideo;
@@ -242,7 +242,7 @@ function initialize()
 	box.position.set(0, 0, 0);
 	box.callback = playVideo;
 	
-	mesh1.add(box);*/
+	mesh1.add(box);
 }
 function update()
 {
