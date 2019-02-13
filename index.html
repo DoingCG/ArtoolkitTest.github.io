@@ -166,6 +166,12 @@ function initialize()
 	{
 		arToolkitSource.onResize()	
 		arToolkitSource.copySizeTo(renderer.domElement)	
+		
+		renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+	renderer.domElement.style.position = 'relative'
+	renderer.domElement.style.top = '40px'
+	renderer.domElement.style.left = '40px'
+		
 		if ( arToolkitContext.arController !== null )
 		{
 			arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)	
