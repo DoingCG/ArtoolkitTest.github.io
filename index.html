@@ -148,9 +148,9 @@ function initialize()
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
 	//renderer.setSize( 640, 480 );
 	renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
-	renderer.domElement.style.position = 'absolute'
-	renderer.domElement.style.top = '0px'
-	renderer.domElement.style.left = '0px'
+	renderer.domElement.style.position = 'relative'
+	renderer.domElement.style.top = '40px'
+	renderer.domElement.style.left = '40px'
 	document.body.appendChild( renderer.domElement );
 	clock = new THREE.Clock();
 	deltaTime = 0;
