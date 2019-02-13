@@ -16,6 +16,7 @@
 </head>
 
 <body style='margin : 50px; overflow: hidden; font-family: Monospace;'>
+	<canvas id="c" width="400" height="300"></canvas>
 
 <!--<video id="video"      webkit-playsinline  
     crossOrigin="anonymous"
@@ -151,7 +152,7 @@ function initialize()
 	renderer.domElement.style.position = 'relative'
 	renderer.domElement.style.top = '40px'
 	renderer.domElement.style.left = '40px'
-	document.body.appendChild( renderer.domElement );
+	document.body.canvas.appendChild( renderer.domElement );
 	clock = new THREE.Clock();
 	deltaTime = 0;
 	totalTime = 0;
